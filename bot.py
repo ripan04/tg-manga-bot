@@ -115,12 +115,11 @@ bot = Client('bot',
              api_hash=('c6f36f2887586704871201a0fea2e452'),
              bot_token=('5596236173:AAERUTzTFrXCiPb4ZHb3Ns_eAo-P1xADf8k'))
 
-@bot.on_message(filters=filters.command(['reboot'])) & filters.user(1942629977) & ~filters.edited)
+@bot.on_message(filters=filters.command(['reboot']))
 async def on_refresh(client: Client, message: Message):
     await message.reply("restarting......")
     quit(1)
-if not user:
-           return await message.reply("Your not a authorize user to this command")
+# await message.reply("Your not a authorize user to this comm
 
 @bot.on_message(filters=~(filters.private & filters.incoming))
 async def on_chat_or_channel_message(client: Client, message: Message):

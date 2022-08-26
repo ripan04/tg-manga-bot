@@ -119,6 +119,8 @@ bot = Client('bot',
 async def on_refresh(client: Client, message: Message):
     await message.reply("restarting......")
     quit(1)
+if not user:
+           return await message.reply("Your not a authorize user to this command")
 
 @bot.on_message(filters=~(filters.private & filters.incoming))
 async def on_chat_or_channel_message(client: Client, message: Message):

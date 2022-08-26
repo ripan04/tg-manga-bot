@@ -5,7 +5,7 @@ import asyncio
 import re
 from dataclasses import dataclass
 import datetime as dt
-import json
+#import json
 
 import pyrogram.errors
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, InputMediaDocument
@@ -103,17 +103,17 @@ def get_buttons_for_options(user_options: int):
     return InlineKeyboardMarkup(buttons)
 
 
-env_file = "env.json"
-if os.path.exists(env_file):
-    with open(env_file) as f:
-        env_vars = json.loads(f.read())
-else:
-    env_vars = dict(os.environ)
+#env_file = "env.json"
+#if os.path.exists(env_file):
+#    with open(env_file) as f:
+ #       env_vars = json.loads(f.read())
+#else:
+#    env_vars = dict(os.environ)
 
 bot = Client('bot',
-             api_id=int(env_vars.get('API_ID')),
-             api_hash=env_vars.get('API_HASH'),
-             bot_token=env_vars.get('BOT_TOKEN'))
+             api_id=int('15916448'),
+             api_hash=('c6f36f2887586704871201a0fea2e452'),
+             bot_token=('5596236173:AAERUTzTFrXCiPb4ZHb3Ns_eAo-P1xADf8k'))
 
 
 @bot.on_message(filters=~(filters.private & filters.incoming))

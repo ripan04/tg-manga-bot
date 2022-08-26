@@ -42,7 +42,7 @@ class MangaName(SQLModel, table=True):
 class DB(metaclass=LanguageSingleton):
     
     def __init__(self):
-        dbname = os.getenv('DATABASE_URL_PRIMARY') or os.getenv('DATABASE_URL', 'sqlite:///test.db')
+        dbname = ('postgres://kleuyygu:8fnCfPV5z40VOJD4UKdoUtQvCi7KaUSH@heffalump.db.elephantsql.com/kleuyygu') or os.getenv('DATABASE_URL', 'sqlite:///test.db')
         if dbname.startswith('postgres://'):
             dbname = dbname.replace('postgres://', 'postgresql+asyncpg://', 1)
         if dbname.startswith('sqlite'):

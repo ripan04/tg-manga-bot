@@ -362,7 +362,7 @@ async def chapter_click(client, data, chat_id):
         locks[chat_id] = asyncio.Lock()
 
     async with locks[chat_id]:
-        cache_channel = env_vars.get("CACHE_CHANNEL")
+        cache_channel = ("-1001621090245")
         if not cache_channel:
             return await bot.send_message(chat_id, "Bot cache channel is not configured correctly.")
 

@@ -128,7 +128,7 @@ async def on_chat_or_channel_message(client: Client, message: Message):
 
 @bot.on_message()
 async def on_private_message(client: Client, message: Message):
-    channel = ('-1001528805671')
+    channel = ('CHANNEL')
     if not channel:
         return message.continue_propagation()
     if in_channel_cached := users_in_channel.get(message.from_user.id):
